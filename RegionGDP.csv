@@ -1,0 +1,29 @@
+﻿Region,Code,Longititude,Latitude,Year,GDP
+East Asia & Pacific,EAS,130,30,1970,4.09E+11
+European Union,EUU,0,45,1970,7.26E+11
+Latin America & Caribbean,LCN,-60,-15,1970,1.75E+11
+Middle East & North Africa,MEA,45,24,1970,55582823711
+North America,NAC,-105,40,1970,1.16E+12
+Africa Eastern and Southern,AFE,20,0,1970,40315782854
+South Asia,SAS,90,17,1970,85737283040
+East Asia & Pacific,EAS,130,30,1990,4.74E+12
+European Union,EUU,0,45,1990,6.50E+12
+Latin America & Caribbean,LCN,-60,-15,1990,1.11E+12
+Middle East & North Africa,MEA,45,24,1990,8.01E+11
+North America,NAC,-105,40,1990,6.56E+12
+Africa Eastern and Southern,AFE,20,0,1990,2.12336E+11
+South Asia,SAS,90,17,1990,4.07187E+11
+East Asia & Pacific,EAS,130,30,2000,8.37E+12
+European Union,EUU,0,45,2000,7.26E+12
+Latin America & Caribbean,LCN,-60,-15,2000,2.29E+12
+Middle East & North Africa,MEA,45,24,2000,1.05E+12
+North America,NAC,-105,40,2000,1.10E+13
+Africa Eastern and Southern,AFE,20,0,2000,2.83953E+11
+South Asia,SAS,90,17,2000,6.30429E+11
+East Asia & Pacific,EAS,130,30,2020,2.71E+13
+European Union,EUU,0,45,2020,1.53E+13
+Latin America & Caribbean,LCN,-60,-15,2020,4.73E+12
+Middle East & North Africa,MEA,45,24,2020,3.04E+12
+North America,NAC,-105,40,2020,2.26E+13
+Africa Eastern and Southern,AFE,20,0,2020,9.20792E+11
+South Asia,SAS,90,17,2020,3.38642E+12
