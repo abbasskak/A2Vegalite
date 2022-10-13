@@ -1,0 +1,12 @@
+#align {
+    text-align: left;
+    border: 0px solid black;
+    width: 60vw;
+    background-color: rgb(234, 248, 253);
+}
+#title {
+    text-align: left;
+    border: 0px solid black;
+    width: 40vw;
+    
+}
