@@ -1,0 +1,40 @@
+{ "$schema":"https://vega.github.io/schema/vega-lite/v5.json", 
+
+
+"repeat": ["1970", "1990", "2000", "2020"],
+  "columns": 2,
+  
+  "spec": {
+    "projection": {"type":"equalEarth"}, 
+  
+
+"layer": [ { "data": {"format": {"type":"topojson","feature": "ne_110m_admin_0_countries"}, "url": "https://raw.githubusercontent.com/abbasskak/A2Vegalite/main/ne_110m_admin_0_countries.json" }, 
+"mark": {"stroke": "black", "type":"geoshape","fill":"white", "strokeWidth": 0.2} },
+
+
+{ "data": { "url": "https://raw.githubusercontent.com/abbasskak/A2Vegalite/main/RegionGDP2.csv" }, 
+
+              
+          
+"encoding": { 
+  "size": { "title":"GDP (USD)","scale": {"domain": [0,2000000000000]},"legend": {"format":".2s"},
+    "field": {"repeat": "repeat"}, "type":"quantitative"
+    
+     },
+    
+  "latitude": {"field":"Latitude","type": "quantitative"}, 
+  "longitude": {"field":"Longititude","type": "quantitative"}, 
+ 
+  
+  "tooltip": [
+      {"field": "Region", "type": "nominal", "title": "Region"},
+      {"field": {"repeat": "repeat"}, "type": "quantitative",  "title": "GDP (USD) ", "format": ".3s"}]
+
+       },
+       "mark": "circle"
+        } ],
+        "title":"",
+        "width": 360,
+        "height": 230
+        }
+}
