@@ -1,0 +1,30 @@
+﻿Region,Code,Longititude,Latitude,Growth,year
+East Asia & Pacific,EAS,130,30,5.101262464,1990
+European Union,EUU,0,45,3.382041402,1990
+Latin America & Caribbean,LCN,-60,-15,-0.476397727,1990
+Middle East & North Africa,MEA,45,24,13.15608171,1990
+North America,NAC,-105,40,1.884970957,1990
+Africa Eastern and Southern,AFE,20,0,0.050825666,1990
+South Asia,SAS,90,17,5.394304977,1990
+East Asia & Pacific,EAS,130,30,5.391156929,2000
+European Union,EUU,0,45,3.899857964,2000
+Latin America & Caribbean,LCN,-60,-15,3.57566557,2000
+Middle East & North Africa,MEA,45,24,6.789277153,2000
+North America,NAC,-105,40,4.185286714,2000
+Africa Eastern and Southern,AFE,20,0,3.197142701,2000
+South Asia,SAS,90,17,4.107516227,2000
+East Asia & Pacific,EAS,130,30,7.613503616,2010
+European Union,EUU,0,45,2.249340586,2010
+Latin America & Caribbean,LCN,-60,-15,6.426942051,2010
+Middle East & North Africa,MEA,45,24,5.038557785,2010
+North America,NAC,-105,40,2.602805571,2010
+Africa Eastern and Southern,AFE,20,0,5.152336462,2010
+South Asia,SAS,90,17,7.465722474,2010
+East Asia & Pacific,EAS,130,30,-0.133318687,2020
+European Union,EUU,0,45,-5.955627684,2020
+Latin America & Caribbean,LCN,-60,-15,-6.722427286,2020
+Middle East & North Africa,MEA,45,24,-3.987742524,2020
+North America,NAC,-105,40,-3.548586605,2020
+Africa Eastern and Southern,AFE,20,0,-2.939185581,2020
+South Asia,SAS,90,17,-5.706189649,2020
+,,,,,
