@@ -1,0 +1,62 @@
+{ "$schema":"https://vega.github.io/schema/vega-lite/v5.json", 
+"data": { 
+  "url": "https://raw.githubusercontent.com/abbasskak/A2Vegalite/main/GDPgrowth.csv"}, 
+  "mark":"bar", 
+  "transform": [
+  {"filter": "year(datum.year) == slectyearfunction"}],
+ 
+  "encoding": { 
+    
+    
+            
+    "x": {"field":"Growth","type":"quantitative", "title":"Growth %"}, 
+    "y": {"field":"Region","type":"nominal"},
+    "tooltip": [
+              {"title": "Region", "field": "Region" },
+              {"title": "GDP Growth %", "field": "Growth", "format": ".2s" }],
+     "color": {
+      "field": "Region",
+      "type": "nominal",
+      "scale": {
+                
+                
+        "domain": [
+          "Middle East & North Africa",
+          "East Asia & Pacific",
+          "European Union",
+          "Latin America & Caribbean",
+          "Africa Eastern and Southern",
+          "North America",
+          "South Asia"
+        ],
+        "range": [
+          "#7bbbb0",
+          "#f54949",
+          
+          "#abc4f1da",
+          "#4d62d4da",
+          "#21b5dada",
+          "#f57906da",
+          "#fcb8fcda"
+        ]
+        
+      }
+      
+     }
+   
+              
+    },
+    "params": [{
+      "name": "slectyearfunction",
+      "bind": {
+        "name": "Year: ",
+        "input": "range",
+        "min": 1990,
+        "step": 10,
+        "max": 2020
+      },
+      "value": 2010
+    }],
+    "height": 105,
+    "width":800
+    }
