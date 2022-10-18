@@ -4,6 +4,7 @@
     width: 70vw;
     font-family: Arial;
 }
+
 #title {
     text-align: left;
     border: 0px solid black;
@@ -12,6 +13,7 @@
     font-family: Arial;
     
 }
+
 #secondtitle {
     text-align: left;
     border: 0px solid black;
@@ -19,6 +21,7 @@
     font-family: Arial;
     
 }
+
 #refr {
     text-align: left;
     border: 0px solid black;
