@@ -1,0 +1,202 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+  "data": {
+    "url": "https://raw.githubusercontent.com/abbasskak/A2Vegalite/main/GDPperCapita.csv"
+  },
+   
+  
+  "vconcat": [
+    {
+      "height": 140,
+      "width":400, 
+      
+      
+     
+      "layer": [
+        {
+          "data": {
+            "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"},
+            "url": "https://raw.githubusercontent.com/abbasskak/A2Vegalite/main/ne_110m_admin_0_countries.json"
+            
+          },
+          
+
+          
+          
+          "transform": [
+            {
+              "as": "Datanotavaible",
+              "calculate": "'No data from ' + datum.properties.NAME + ' for the selected year'"
+              
+            }
+            
+          ],
+          "encoding": {
+            "tooltip": {"field": "Datanotavaible"}
+          },
+          "mark": {
+            "stroke": "white",
+            "strokeWidth": 0.1,
+            "type": "geoshape",
+            "fill": "#e6f3f8"
+            
+          }
+          
+        },
+        
+        {
+          "params": [
+            {
+              "select": {"encodings": ["description"], "type": "point" },
+              "name": "Countryselectionfunction"
+            }
+            
+          ],
+          "mark": {"stroke": "#319dbe", "strokeWidth": 0.25, "type": "geoshape"},
+          "transform": [
+            {
+              "filter": "year(datum.year) == slectyearfunction"
+            },
+            {
+              
+              "from": {
+                "key": "properties.SU_A3",
+                "data": {
+                  "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"},
+                  "url": "https://raw.githubusercontent.com/abbasskak/A2Vegalite/main/ne_110m_admin_0_countries.json"
+                  
+                }
+                
+                
+              },
+              "lookup": "Code",
+              "as": "geo"
+            }
+            
+          ],
+          
+          "encoding": {
+            "tooltip": [
+              {"title": "Country", "field": "Countryname" },
+              {"title": "GDP Per Capita (USD)", "field": "GDP Per Capita", "format": ".2s" }
+             
+              
+            ],
+            "shape": {"type": "geojson","field": "geo"},
+            "description": {"field": "Countryname"},
+            "fill": {
+              "legend": {"format":".2s", "title": "GDP Per Capita (USD)"},
+              "scale": {
+                "domain": [0, 100000],
+                "type": "sqrt",
+                "scheme":"goldgreen"
+                
+              },
+              
+              "type": "quantitative",
+            
+            
+              
+              "field": "GDP Per Capita"
+              
+            }
+            
+          }
+        }
+      ],
+      "projection": {
+        "scale": {"expr": "Sizefunction"},
+        "type": "equirectangular",
+        "center": {"expr": "Location_of_center"}
+         }
+    },
+    {
+      
+      
+      "layer": [
+        {
+          "encoding": {
+            "x": {"field": "year", "axis": {"grid": false}, "type": "temporal"},
+            "y": {"aggregate": "average", "field": "GDP Per Capita",  "axis": {"format": ".3s" }, "title": "GDP Per Capita (USD)"}
+            },
+          "transform": [
+            {"filter": {"param": "Countryselectionfunction"}}
+          ],
+          
+          
+          "mark": "line"
+        },
+        {
+          "mark": {
+            "x": "width","y": 0,"type": "text","align": "left"
+              
+              
+          },
+          "encoding": {
+            "text": {
+              "value": {"expr": "Countryselectionfunction.Countryname"},
+              "condition": {
+                "value": "World GDP",
+                "test": "!isDefined(Countryselectionfunction.Countryname)"
+                
+              }
+              
+            }
+          }
+        }
+      ],
+      "width":400,
+      "height": 100
+    }
+  ],
+  "params": [
+    
+    {
+        "name": "Sizefunction",
+        
+        "bind": {
+            "input": "range",
+            "name": "Zoom: ",
+            "min": 50,
+            "step": 10,
+            "max": 200
+            
+            
+        },
+        "value": 55
+    },
+    {
+      "name": "slectyearfunction",
+      "bind": {
+        "name": "Year: ",
+        "input": "range",
+        "min": 2000,
+        "step": 1,
+        "max": 2020
+      },
+      "value": 2010
+    },
+    {
+        "name": "Location_of_center",
+        "value": [0, 90],
+        "bind": {
+            "labels": ["Center", "West", "East", "North", "South"],
+            "name": " Choose Center: ",
+            "input": "select",
+            "options": [
+                [0,90],
+                [-95.712891, 90],
+                [104.195397, 90],
+                [0, 90],
+                [0, 0]
+                
+            ]
+            
+        }
+    }
+    
+    
+  ]
+  
+}
