@@ -1,0 +1,69 @@
+{ "$schema":"https://vega.github.io/schema/vega-lite/v5.json", 
+
+
+"repeat": ["1990", "2020"],
+  "columns": 2,
+  
+  "spec": {
+  "projection": {"type":"equalEarth"}, 
+  
+
+"layer": [ { "data": {"format": {"type":"topojson","feature": "ne_110m_admin_0_countries"}, "url": "https://raw.githubusercontent.com/abbasskak/A2Vegalite/main/ne_110m_admin_0_countries.json" }, 
+"mark": {"stroke": "black", "type":"geoshape","fill":"white", "strokeWidth": 0.2} },
+
+
+{ "data": { "url": "https://raw.githubusercontent.com/abbasskak/A2Vegalite/main/GDPPCRegions.csv" }, 
+
+              
+          
+"encoding": { 
+  "size": { "title":"GDP (USD)","scale": {"domain": [0,6000],"scheme":"accent"},"legend": null,
+  
+    "field": {"repeat": "repeat"}, "type":"quantitative"
+    
+     },
+    
+  "latitude": {"field":"Latitude","type": "quantitative"}, 
+  "longitude": {"field":"Longititude","type": "quantitative"}, 
+  
+ "color": {
+  "scale": {"domain": [
+    "Middle East & North Africa",
+    "East Asia & Pacific",
+    "European Union",
+    "Latin America & Caribbean",
+    "Africa Eastern and Southern",
+    "North America",
+    "South Asia"
+  ],
+  "range": [
+    "#7bbbb0",
+    "#f54949",
+    
+    "#abc4f1da",
+    "#4d62d4da",
+    "#21b5dada",
+    "#f57906da",
+    "#fcb8fcda"
+  ]},
+      "field": "Region",
+      "type": "nominal",
+      "legend": null
+     },
+  
+  "tooltip": [
+      {"field": "Region", "type": "nominal", "title": "Region"},
+      {"field": {"repeat": "repeat"}, "type": "quantitative",  "title": "GDP Per Capita (USD) ", "format": ".2s"}]
+
+       },
+       "mark": "circle"
+        } ],
+        
+        
+        
+
+        "width": 535,
+        "height": 200
+        }
+     
+}
