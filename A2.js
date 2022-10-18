@@ -14,6 +14,7 @@ var fg_4 = "Barchart.json";
 vegaEmbed("#FOURTHGRAPH", fg_4).then(function(result) {
 }).catch(console.error);
 
+
 var fg_5 = "Sizegraph2.json";
 vegaEmbed("#FIFTHGRAPH", fg_5).then(function(result) {
 }).catch(console.error);
